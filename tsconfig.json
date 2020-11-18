@@ -7,20 +7,17 @@
     "jsx": "preserve",
     "allowJs": true,
     "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
-
     "baseUrl": ".",
     "strict": true,
     "alwaysStrict": true,
     /* Strict Type-Checking Options */
     "typeRoots": ["types", "node_modules/@types"],
-
     /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "importHelpers": true,
     "removeComments": true,
     "sourceMap": true,
-
     /* Module Resolution Options */
     "moduleResolution": "node",
     "resolveJsonModule": true,
@@ -28,7 +25,6 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
-
     /* Advanced Options */
     "experimentalDecorators": true,
     "skipLibCheck": true,

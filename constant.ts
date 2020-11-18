@@ -1,4 +1,4 @@
-export const LIGHT_COLORS = {
+export const LIGHT_COLORS: any = {
   text: "hsl(222deg, 22%, 5%)",
   background: "hsl(0deg, 0%, 100%)",
   blurredBackground: "hsla(0deg, 0%, 100%, 0.85)",
@@ -51,7 +51,7 @@ LIGHT_COLORS.syntax = {
   fn: "#3D5AFE",
 };
 
-export const DARK_COLORS = {
+export const DARK_COLORS: any = {
   text: "hsl(0deg, 0%, 100%)",
   background: "hsl(210deg, 30%, 8%)",
   blurredBackground: "hsla(210deg, 30%, 8%, 0.85)",

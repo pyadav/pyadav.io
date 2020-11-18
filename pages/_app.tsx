@@ -11,6 +11,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     <ThemeProvider theme={THEME}>
       <DefaultSeo title="I am yadav" />
       <GlobalStyles />
+
       <>
         <div id="mobile-nav-portal" />
         <Component {...pageProps} />
