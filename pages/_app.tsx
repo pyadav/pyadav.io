@@ -1,15 +1,22 @@
 import React from "react";
 import { DefaultSeo } from "next-seo";
 import type { AppProps } from "next/app";
-import { createGlobalStyle, ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 
-const GlobalStyle = createGlobalStyle``;
+import { THEME } from "constant";
+import GlobalStyles from "components/GlobalStyles";
+
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={THEME}>
       <DefaultSeo title="I am yadav" />
-      <GlobalStyle />
-      <Component {...pageProps} />
+      <GlobalStyles />
+      <>
+        <div id="mobile-nav-portal" />
+        <Component {...pageProps} />
+        <div id="confetti-portal" />
+        <div id="portals" />
+      </>
     </ThemeProvider>
   );
 };

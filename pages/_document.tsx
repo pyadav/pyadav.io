@@ -18,10 +18,7 @@ export default class MyDocument extends Document<IDocumentProps> {
     return (
       <Html>
         <Head>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap"
-            rel="stylesheet"
-          />
+          <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet" />
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           {this.props.styleTags}
         </Head>
