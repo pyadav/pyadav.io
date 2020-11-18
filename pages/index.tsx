@@ -1,2 +1,7 @@
-const IndexPage = () => <h2>Hello World 👋</h2>;
+import Homepage from "components/Homepage";
+
+const IndexPage = () => {
+  return <Homepage />;
+};
+
 export default IndexPage;
