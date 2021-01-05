@@ -1,22 +1,32 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import fs from "fs";
 import path from "path";
 import Link from "next/link";
 import matter from "gray-matter";
 import { postFilePaths, POSTS_PATH } from "helpers";
+import React from "react";
+import Header, { Wrapper, Container } from "components/Header";
 
 const IndexPage = ({ posts }: any) => {
   return (
-    <>
-      <ul>
-        {posts.map((post: any) => (
-          <li key={post.filePath}>
-            <Link as={`/posts/${post.filePath.replace(/\.mdx?$/, "")}`} href={`/posts/[slug]`}>
-              <span>{post.data.title}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </>
+    <React.Fragment>
+      <Header />
+      <Wrapper>
+        <Container>
+          <ul>
+            {posts.map(({ data, slug }: any) => {
+              return (
+                <li key={data.title}>
+                  <Link href="/posts/[slug]" as={`/posts/${slug}`}>
+                    <a>{data.title}</a>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </Container>
+      </Wrapper>
+    </React.Fragment>
   );
 };
 
@@ -28,7 +38,7 @@ export function getStaticProps() {
     return {
       content,
       data,
-      filePath,
+      slug: filePath.replace(/\.mdx/, ""),
     };
   });
 

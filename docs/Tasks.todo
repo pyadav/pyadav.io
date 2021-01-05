@@ -1,0 +1,16 @@
+iamyadav.com:
+✔ Create a base next.js blog starter @done(21-01-05 12:01)
+✔ Implement typescript support @done(21-01-05 12:01)
+✔ Implement style-component support @done(21-01-05 12:03)
+
+☐ use `next/head` for SEO purpose
+☐ use `next/router` for routing purposes
+☐ MDX support using next-mdx-remote
+☐ add google analytics using GTM
+☐ Prism Code Syntax support
+☐ Deploy on Vercel
+☐ Github ci/cd actions
+
+- Implement testing
+    ✔ jest support @done(21-01-05 12:02)
+

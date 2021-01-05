@@ -87,19 +87,12 @@ const GlobalStyles = createGlobalStyle`
 
   /* CSS Variables */
   :root {
-    /*  Colors are injected in 'gatsby-ssr.js'  */
     --font-weight-bold: 500;
     --font-weight-medium: 400;
     --font-weight-light: 300;
 
-    --font-family: 'Ubuntu', Futura, -apple-system, sans-serif;
+    --font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
     --font-family-mono: 'League Mono', 'Fira Mono', monospace;
-
-    /* HACK:
-      Reach UI tests for loaded styles, but I'm providing my own.
-      This is to avoid a noisy warning in dev.
-    */
-   --reach-dialog: 1;
   }
 `;
 
