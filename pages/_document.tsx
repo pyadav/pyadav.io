@@ -2,6 +2,7 @@ import React from "react";
 import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 import { GTM_ID } from "helpers/gtm";
+import GTMNoScript from "components/GTMNoScript";
 
 interface IDocumentProps {
   styleTags: React.ReactElement[];
@@ -39,20 +40,9 @@ export default class MyDocument extends Document<IDocumentProps> {
           {/* End Google Tag Manager */}
         </Head>
         <body>
-          {/* Google Tag Manager (noscript) */}
-          <noscript>
-            <iframe
-              title="gtm"
-              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-              height="0"
-              width="0"
-              style={{ display: "none", visibility: "hidden" }}
-            />
-          </noscript>
-          {/* End Google Tag Manager (noscript) */}
-
           <Main />
           <NextScript />
+          <GTMNoScript />
         </body>
       </Html>
     );

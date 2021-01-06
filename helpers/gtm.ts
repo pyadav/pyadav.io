@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 export const GTM_ID = process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID;
 
 export const GTMPageView = (url: string) => {
@@ -11,8 +12,9 @@ export const GTMPageView = (url: string) => {
     page: url,
   };
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
-  window && window.dataLayer && window.dataLayer.push(pageEvent);
+  window.dataLayer = window.dataLayer || [];
+  //@ts-ignore
+  window.dataLayer.push(pageEvent);
   return pageEvent;
 };
