@@ -6,6 +6,13 @@ import matter from "gray-matter";
 import { postFilePaths, POSTS_PATH } from "helpers";
 import React from "react";
 import Header, { Wrapper, Container } from "components/Header";
+import styled from "styled-components";
+
+const Blogs = styled.div``;
+const BlogTitle = styled.h2`
+  margin-bottom: 1rem;
+  line-height: 0.9;
+`;
 
 const IndexPage = ({ posts }: any) => {
   return (
@@ -13,17 +20,17 @@ const IndexPage = ({ posts }: any) => {
       <Header />
       <Wrapper>
         <Container>
-          <ul>
+          <Blogs>
             {posts.map(({ data, slug }: any) => {
               return (
-                <li key={data.title}>
+                <BlogTitle key={data.title}>
                   <Link href="/posts/[slug]" as={`/posts/${slug}`}>
                     <a>{data.title}</a>
                   </Link>
-                </li>
+                </BlogTitle>
               );
             })}
-          </ul>
+          </Blogs>
         </Container>
       </Wrapper>
     </React.Fragment>

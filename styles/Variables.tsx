@@ -25,6 +25,7 @@ export default css`
   :root {
     ${lightVars}
 
+    --font-weight-bolder: 500;
     --font-weight-bold: 500;
     --font-weight-medium: 400;
     --font-weight-light: 300;

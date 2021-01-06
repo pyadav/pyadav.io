@@ -9,3 +9,7 @@ export const postFilePaths = fs
   .readdirSync(POSTS_PATH)
   // Only include md(x) files
   .filter((path) => /\.mdx?$/.test(path));
+
+export const pipe = (...fns: any) => (data: any) => {
+  return fns.reduce((currentValue: any, currentFunc: any) => currentFunc(currentValue), data);
+};
