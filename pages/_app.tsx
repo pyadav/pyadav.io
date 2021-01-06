@@ -5,7 +5,6 @@ import { ThemeProvider } from "styled-components";
 
 import { THEME } from "constant";
 import GlobalStyles from "styles/GlobalStyles";
-import GoogleTagManager from "components/GoogleTagManager";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,9 +13,7 @@ const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
       <GlobalStyles />
 
       <>
-        <GoogleTagManager>
-          <Component {...pageProps} />
-        </GoogleTagManager>
+        <Component {...pageProps} />
         <div id="confetti-portal" />
         <div id="portals" />
       </>
