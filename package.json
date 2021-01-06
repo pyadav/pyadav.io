@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next",
+    "test": "jest",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "test": "jest --watch",
+    "test:watch": "jest --watch",
     "analyze": "ANALYZE=true next build",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
@@ -24,6 +25,7 @@
     "next": "^10.0.4",
     "next-mdx-remote": "^1.0.0",
     "next-seo": "^4.17.0",
+    "polished": "^4.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "reading-time": "^1.2.0",
@@ -31,7 +33,7 @@
     "remark-autolink-headings": "^6.0.1",
     "remark-capitalize": "^1.1.0",
     "remark-code-titles": "^0.1.1",
-    "remark-slug": "^6.0.0",
+    "remark-containers": "^1.2.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -46,6 +48,7 @@
     "@types/styled-components": "^5.1.4",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
+    "babel-plugin-inline-react-svg": "^1.1.2",
     "babel-plugin-styled-components": "^1.11.1",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",
@@ -53,8 +56,14 @@
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.3.6",
     "jest": "^26.6.3",
     "prettier": "^2.1.2",
     "typescript": "^4.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    }
   }
 }

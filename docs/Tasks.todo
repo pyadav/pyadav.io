@@ -5,8 +5,14 @@ iamyadav.com:
 
 ☐ use `next/head` for SEO purpose
 ☐ use `next/router` for routing purposes
-☐ MDX support using next-mdx-remote
+✔ MDX support using next-mdx-remote @done(21-01-05 20:58)
+☐ Light Mode / Dark Mode
+☐ Tags/Categories support
+☐ Code highlighting with prism-react-renderer and react-live support. Also allows adding line numbers, line highlighting, language tabs, and file titles.  
+☐ RSS Feed for blog posts
 ☐ add google analytics using GTM
+☐ SEO (Sitemap, OpenGraph tags, Twitter tags)
+☐ Offline Support & WebApp Manifest
 ☐ Prism Code Syntax support
 ☐ Deploy on Vercel
 ☐ Github ci/cd actions
@@ -14,3 +20,8 @@ iamyadav.com:
 - Implement testing
     ✔ jest support @done(21-01-05 12:02)
 
+- Remark/Rehype plugin
+    ☐ rehype-slug
+    ☐ remark-prism
+    ✔ remark-containers @done(21-01-06 09:32)
+    ☐ remark-autolink-headings

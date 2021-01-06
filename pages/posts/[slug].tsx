@@ -7,7 +7,6 @@ import Link from "next/link";
 import path from "path";
 import readingTime from "reading-time";
 import mdxPrism from "mdx-prism";
-import remarkCapitalize from "remark-capitalize";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { postFilePaths, POSTS_PATH } from "helpers";
 import { Wrapper, Container } from "components/Header";
@@ -52,12 +51,7 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [
-        require("remark-autolink-headings"),
-        require("remark-slug"),
-        require("remark-code-titles"),
-        remarkCapitalize,
-      ],
+      remarkPlugins: [require("remark-containers"), require("remark-capitalize"), require("remark-autolink-headings")],
       rehypePlugins: [mdxPrism],
     },
     scope: data,
