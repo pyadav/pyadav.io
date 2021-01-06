@@ -1,12 +1,12 @@
 import { render } from "@testing-library/react";
 
-function SomeComp() {
+function TestComponent() {
   return <div>Hello</div>;
 }
 
-describe("SomeComp", () => {
+describe("TestComponent", () => {
   it("renders Hello", () => {
-    const { getByText } = render(<SomeComp />);
+    const { getByText } = render(<TestComponent />);
     expect(getByText("Hello")).toBeInTheDocument();
   });
 });

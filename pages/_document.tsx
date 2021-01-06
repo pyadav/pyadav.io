@@ -20,7 +20,7 @@ export default class MyDocument extends Document<IDocumentProps> {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Consolas&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&family=Fira+Mono&display=swap"
             rel="stylesheet"
           />
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />

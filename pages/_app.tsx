@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 
 import { THEME } from "constant";
-import GlobalStyles from "components/GlobalStyles";
+import GlobalStyles from "styles/GlobalStyles";
 import GoogleTagManager from "components/GoogleTagManager";
 
 const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
