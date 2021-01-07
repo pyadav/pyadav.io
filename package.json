@@ -18,6 +18,7 @@
   "dependencies": {
     "@mdx-js/loader": "^1.6.19",
     "@next/mdx": "^10.0.1",
+    "@use-it/interval": "^1.0.0",
     "framer-motion": "^2.9.4",
     "globby": "^11.0.1",
     "gray-matter": "^4.0.2",
@@ -28,6 +29,7 @@
     "polished": "^4.0.5",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-spring": "^8.0.27",
     "reading-time": "^1.2.0",
     "rehype": "^11.0.0",
     "remark-autolink-headings": "^6.0.1",

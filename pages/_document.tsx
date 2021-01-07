@@ -1,5 +1,11 @@
 import React from "react";
-import Document, { Html, Head, Main, NextScript, DocumentContext } from "next/document";
+import Document, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 interface IDocumentProps {
@@ -9,7 +15,9 @@ interface IDocumentProps {
 export default class MyDocument extends Document<IDocumentProps> {
   static async getInitialProps({ renderPage }: DocumentContext) {
     const sheet = new ServerStyleSheet();
-    const page = renderPage((App) => (props) => sheet.collectStyles(<App {...props} />));
+    const page = renderPage((App) => (props) =>
+      sheet.collectStyles(<App {...props} />),
+    );
     const styleTags = sheet.getStyleElement();
     return { ...page, styleTags };
   }
@@ -25,7 +33,10 @@ export default class MyDocument extends Document<IDocumentProps> {
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
           {this.props.styleTags}
 
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`} />
+          <script
+            async
+            src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
+          />
           <script
             dangerouslySetInnerHTML={{
               __html: `

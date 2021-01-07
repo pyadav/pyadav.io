@@ -1,54 +1,75 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import fs from "fs";
-import path from "path";
 import Link from "next/link";
-import matter from "gray-matter";
-import { postFilePaths, POSTS_PATH } from "helpers";
+import {
+  postFilePaths,
+  getPostFilePathData,
+  isPostPublished,
+  sortByField,
+} from "helpers";
+
 import React from "react";
-import Header, { Wrapper, Container } from "components/Header";
+import { Wrapper, Header, Subtitle, Title, Updated } from "components/Page";
+import { title, description } from "constant";
 import styled from "styled-components";
 
-const Blogs = styled.div``;
-const BlogTitle = styled.h2`
+const PostList = styled.div``;
+const PostTitle = styled.h2`
   margin-bottom: 1rem;
   line-height: 0.9;
 `;
+const PostDescription = styled.div``;
+
+const DateComponents = ({ value = new Date() }: any) => {
+  const postedDate = new Date(value).toDateString();
+  return <Updated>{postedDate}</Updated>;
+};
+
+const Tag = ({ slug }: any) => {
+  return <span>{slug} &nbsp; </span>;
+};
+
+const Post = ({ data: { data, slug } }: any) => (
+  <React.Fragment>
+    <PostTitle>
+      <Link href="/posts/[slug]" as={`/posts/${slug}`}>
+        <a>{data.title}</a>
+      </Link>
+    </PostTitle>
+    <PostDescription>
+      {data?.tags.map((tag: any) => (
+        <Tag key={tag} slug={tag} />
+      ))}
+      <DateComponents value={data.published} />
+    </PostDescription>
+  </React.Fragment>
+);
 
 const IndexPage = ({ posts }: any) => {
   return (
-    <React.Fragment>
-      <Header />
+    <>
+      {/* SEO tag container */}
+      <Header>
+        <Title>{title}</Title>
+        <Subtitle>{description}</Subtitle>
+      </Header>
       <Wrapper>
-        <Container>
-          <Blogs>
-            {posts.map(({ data, slug }: any) => {
-              return (
-                <BlogTitle key={data.title}>
-                  <Link href="/posts/[slug]" as={`/posts/${slug}`}>
-                    <a>{data.title}</a>
-                  </Link>
-                </BlogTitle>
-              );
-            })}
-          </Blogs>
-        </Container>
+        <PostList>
+          {posts.map((postContent: any) => (
+            <Post key={postContent.slug} data={postContent} />
+          ))}
+        </PostList>
       </Wrapper>
-    </React.Fragment>
+    </>
   );
 };
 
 export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
-    const source = fs.readFileSync(path.join(POSTS_PATH, filePath));
-    const { content, data } = matter(source);
-
-    return {
-      content,
-      data,
-      slug: filePath.replace(/\.mdx/, ""),
-    };
-  });
-
+  const posts = postFilePaths
+    .map(getPostFilePathData)
+    .filter(
+      process.env.NODE_ENV === "production" ? isPostPublished : () => true,
+    )
+    .sort(sortByField("published"));
   return { props: { posts } };
 }
 

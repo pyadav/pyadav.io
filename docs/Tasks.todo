@@ -7,7 +7,12 @@ iamyadav.com:
 ☐ use `next/router` for routing purposes
 ✔ MDX support using next-mdx-remote @done(21-01-05 20:58)
 ☐ Light Mode / Dark Mode
-☐ Tags/Categories support
+☐ Posts/Articles subscription
+☐ Tags/Categories filter support
+☐ Search filter
+☐ Trending Content
+☐ Self promotion
+☐ Ads/promotated content
 ☐ Code highlighting with prism-react-renderer and react-live support. Also allows adding line numbers, line highlighting, language tabs, and file titles.  
 ☐ RSS Feed for blog posts
 ☐ add google analytics using GTM
@@ -16,6 +21,7 @@ iamyadav.com:
 ☐ Prism Code Syntax support
 ☐ Deploy on Vercel
 ☐ Github ci/cd actions
+
 
 - Implement testing
     ✔ jest support @done(21-01-05 12:02)

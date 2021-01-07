@@ -1,3 +1,7 @@
+export const title = "Praveen yadav's Blog";
+export const description =
+  "Written by Praveen Yadav frontend developer interested in React, Open Source, and writin good plain HTML and CSS. You can follow him on Twitter.";
+
 export const LIGHT_COLORS: any = {
   text: "hsl(222deg, 22%, 5%)",
   background: "hsl(0deg, 0%, 100%)",
@@ -138,4 +142,5 @@ export const BREAKPOINTS = {
 export const THEME = {
   unit: UNIT,
   breakpoints: BREAKPOINTS,
+  contentWidth: "50rem",
 };

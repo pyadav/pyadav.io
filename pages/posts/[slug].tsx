@@ -9,7 +9,9 @@ import readingTime from "reading-time";
 import mdxPrism from "mdx-prism";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { postFilePaths, POSTS_PATH } from "helpers";
-import { Wrapper, Container } from "components/Header";
+import { Wrapper } from "components/Page";
+import Warning from "components/Warning";
+import InteractiveExample from "components/InteractiveExample";
 
 // Custom components/renderers to pass to MDX.
 // Since the MDX files aren't loaded by webpack, they have no knowledge of how
@@ -17,6 +19,8 @@ import { Wrapper, Container } from "components/Header";
 // here.
 const components = {
   h1: ({ children }: any) => <div>{children}</div>,
+  Warning,
+  InteractiveExample,
 };
 
 export default function PostPage({ source, frontMatter }: any) {
@@ -24,20 +28,23 @@ export default function PostPage({ source, frontMatter }: any) {
 
   return (
     <Wrapper>
-      <Container>
+      <header>
+        <nav>
+          <Link href="/">
+            <a>Go back home</a>
+          </Link>
+        </nav>
+      </header>
+      <article
+        className="blog-post"
+        itemScope
+        itemType="http://schema.org/Article"
+      >
         <header>
-          <nav>
-            <Link href="/">
-              <a>Go back home</a>
-            </Link>
-          </nav>
+          <h1 itemProp="headline">{frontMatter.title}</h1>
         </header>
-        <div className="post-header">
-          <h1>{frontMatter.title}</h1>
-          {frontMatter.description && <p className="description">{frontMatter.description}</p>}
-        </div>
         <main>{content}</main>
-      </Container>
+      </article>
     </Wrapper>
   );
 }
@@ -51,7 +58,11 @@ export const getStaticProps: GetStaticProps = async ({ params }: any) => {
     components,
     // Optionally pass remark/rehype plugins
     mdxOptions: {
-      remarkPlugins: [require("remark-containers"), require("remark-capitalize"), require("remark-autolink-headings")],
+      remarkPlugins: [
+        require("remark-containers"),
+        require("remark-capitalize"),
+        require("remark-autolink-headings"),
+      ],
       rehypePlugins: [mdxPrism],
     },
     scope: data,
