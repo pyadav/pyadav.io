@@ -41,7 +41,7 @@ export default function PostPage({ source, frontMatter }: any) {
         itemType="http://schema.org/Article"
       >
         <header>
-          <h1 itemProp="headline">{frontMatter.title}</h1>
+          <h2 itemProp="headline">{frontMatter.title}</h2>
         </header>
         <main>{content}</main>
       </article>

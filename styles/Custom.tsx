@@ -35,7 +35,7 @@ export default css`
   select,
   option {
     font-family: var(--font-family);
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-medium);
   }
 
   h1,
@@ -169,15 +169,16 @@ export default css`
   h4 > a,
   h5 > a,
   h6 > a {
-    color: inherit;
     text-decoration: none;
   }
 
   p {
+    font-size: 1.15rem;
+
     line-height: var(--lineHeight-relaxed);
     --baseline-multiplier: 0.179;
     --x-height-multiplier: 0.35;
-    margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
+    margin: var(--spacing-8) var(--spacing-0) var(--spacing-8) var(--spacing-0);
   }
 
   ol,
@@ -250,16 +251,12 @@ export default css`
   }
 
   a {
-    color: var(--color-primary);
-    --text-opacity: 1;
-    color: rgba(99, 102, 241, var(--text-opacity));
+    color: rgba(129, 140, 248);
   }
 
   a:focus,
   a:hover {
-    text-decoration: none;
-    --text-opacity: 1;
-    color: rgba(129, 140, 248, var(--text-opacity));
+    text-decoration: underline;
   }
 
   .inline {

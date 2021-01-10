@@ -29,7 +29,7 @@ const Header = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 3rem;
   padding: 1rem auto 0 auto;
   margin: 1rem 0 1rem 0;
   line-height: 1em;

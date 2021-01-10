@@ -2,7 +2,7 @@ import { css } from "styled-components";
 
 const lightVars = `
   --color-background: #FCFFFF;
-  --color-text: #2e353f;
+  --color-text: #030303;
   --color-primary: #005b99;
   --color-heading: #1a202c;
   --color-accent: #d1dce5;
@@ -35,10 +35,10 @@ export default css`
     --font-weight-light: 300;
 
     // Font Family
-    --font-family: "Quicksand", -apple-system, BlinkMacSystemFont, Segoe UI,
-      Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-      sans-serif;
-    --font-family-heading: "Quicksand", -apple-system, BlinkMacSystemFont,
+    --font-family: "Sorts Mill Goudy", -apple-system, BlinkMacSystemFont,
+      Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+      Helvetica Neue, sans-serif;
+    --font-family-heading: "Sorts Mill Goudy", -apple-system, BlinkMacSystemFont,
       Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
       Helvetica Neue, sans-serif;
     --font-family-mono: "Fira Mono", monospace;

@@ -13,7 +13,7 @@ import { title, description } from "constant";
 import styled from "styled-components";
 
 const PostList = styled.div``;
-const PostTitle = styled.h2`
+const PostTitle = styled.h3`
   margin-bottom: 1rem;
   line-height: 0.9;
 `;
@@ -21,7 +21,7 @@ const PostDescription = styled.div``;
 
 const DateComponents = ({ value = new Date() }: any) => {
   const postedDate = new Date(value).toDateString();
-  return <Updated>{postedDate}</Updated>;
+  return <span>{postedDate}</span>;
 };
 
 const Tag = ({ slug }: any) => {
