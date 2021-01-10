@@ -8,8 +8,8 @@ import Custom from "styles/Custom";
 
 const GlobalStyles = createGlobalStyle`
   ${Reset}
-  ${Prism}
   ${Variables}
+  ${Prism}
   ${Custom}
 `;
 
