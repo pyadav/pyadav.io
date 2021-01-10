@@ -27,6 +27,18 @@ export default class MyDocument extends Document<IDocumentProps> {
       <Html>
         <Head>
           <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+          <link
+            rel="preload"
+            href="/fonts/Fira_Code/FiraCode-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
+          <link
+            rel="preload"
+            href="/fonts/Sorts_Mill_Goudy/SortsMillGoudy-Regular.ttf"
+            as="font"
+            crossOrigin=""
+          />
           <link rel="stylesheet" href="/fonts/fonts.css" />
           {this.props.styleTags}
 
