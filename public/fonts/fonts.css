@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'Fira Mono';
+    src: url('Fira_Mono/FiraMono-Bold.ttf');
+    src: url('Fira_Mono/FiraMono-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sorts Mill Goudy';
+    src: url('Sorts_Mill_Goudy/SortsMillGoudy-Regular.ttf');
+    src: url('Sorts_Mill_Goudy/SortsMillGoudy-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
