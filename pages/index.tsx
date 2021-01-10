@@ -8,7 +8,7 @@ import {
 } from "helpers";
 
 import React from "react";
-import { Wrapper, Header, Subtitle, Title, Updated } from "components/Page";
+import { Wrapper, Header, Subtitle, Title } from "components/Page";
 import { title, description } from "constant";
 import styled from "styled-components";
 

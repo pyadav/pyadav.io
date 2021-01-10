@@ -10,6 +10,7 @@
     "type-check": "tsc",
     "test:watch": "jest --watch",
     "analyze": "ANALYZE=true next build",
+    "lint": "eslint . --ext .js,.ts,.tsx --quiet --fix",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "keywords": [],
@@ -65,7 +66,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test"
+      "pre-commit": "yarn lint && yarn test"
     }
   }
 }
